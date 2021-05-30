@@ -6,11 +6,17 @@ $finder = PhpCsFixer\Finder::create()
 ;
 
 $config = new PhpCsFixer\Config();
+$config->setRiskyAllowed(false);
 
 return $config->setRules([
         '@PSR12' => true,
         'fully_qualified_strict_types' => true,
         'array_syntax' => ['syntax' => 'short'],
+        '@PHP56Migration' => true,
+        '@PHP70Migration' => false,
+        '@PHP71Migration' => false,
+        '@PHP73Migration' => false,
+        '@PHP80Migration' => false,
     ])
     ->setFinder($finder)
 ;
